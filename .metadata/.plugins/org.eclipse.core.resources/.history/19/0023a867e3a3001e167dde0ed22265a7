@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 5.3//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="mypack.student" table="Stud1">
+<id name="rollno">
+<generator class="increment"></generator>
+</id>
+<property name="stdname"></property>
+<property name="marks"></property>
+</class>
+</hibernate-mapping>

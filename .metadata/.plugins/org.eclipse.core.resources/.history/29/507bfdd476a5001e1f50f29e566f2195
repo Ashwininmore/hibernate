@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+  
+ <hibernate-mapping>
+<class name="mypack.Employee" table="Employee" discreminitor-value="emp">
+<id name="rollno">
+<generator class="increment"></generator>
+</id>
+<discreminitor column="type" type="string"></discreminitor>
+<property name="name"></property>
+<subclass name="mypack.Regular_Emp" discreminitor-value="Regemp">
+<property name="salary"></property>
+<property name="bonus"></property>
+</subclass>
+<subclass name="mypack.Contract_Emp" discreminitor-value="Conemp">
+<property name="pay_per_hour"></property>
+<property name="contract_period"></property>
+</subclass>
+</class>
+</hibernate-mapping>
