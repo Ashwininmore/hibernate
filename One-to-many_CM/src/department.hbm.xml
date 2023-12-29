@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+  
+ <hibernate-mapping>
+<class name="mypack.Department" table="dept">
+<id name="deptid">
+<generator class="increment"></generator>
+</id>
+<property name="deptname"></property>
+<list name="emp" cascade="all">
+<key column="did"></key>
+<index column="type"></index>
+<one-to-many class="mypack.Employee"/>
+</list>
+</class>
+<class name="mypack.Employee" table="emp501">
+<id name="empid">
+<generator class="increment"></generator>
+</id>
+<property name="empname"></property>
+
+<property name="salary"></property>
+</class>
+</hibernate-mapping>
