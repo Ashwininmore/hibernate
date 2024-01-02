@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+ 
+ <hibernate-mapping>
+<class name="mypack.Customer" table="cust12">
+<id name="custid">
+<generator class="increment" />
+</id>
+<property name="custname" />
+<property name="addr" />
+
+<list name="itm" table="cust_item12" fetch="select" cascade="all">
+
+<key column="custid" />
+<index column="type"></index>
+
+<many-to-many class="mypack.Item" column="itemid" />
+</list>
+</class>
+</hibernate-mapping>
